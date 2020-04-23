@@ -1,9 +1,9 @@
-package ru.netology;
+package ru.netology.domain;
 
 import org.junit.jupiter.params.ParameterizedTest;
 import org.junit.jupiter.params.provider.CsvSource;
 
-import static org.junit.jupiter.api.Assertions.*;
+import static org.junit.jupiter.api.Assertions.assertEquals;
 
 class RadioTest {
 
@@ -47,7 +47,7 @@ class RadioTest {
     @CsvSource(
             value= {
                     "'set min correct station',0,0",
-                    "'set middle orrect station',5,5",
+                    "'set middle correct station',5,5",
                     "'set max correct station',9,9",
                     "'set station below minimum',-3,0",
                     "'set station is higher than maximum',15,9"
@@ -63,11 +63,29 @@ class RadioTest {
     @ParameterizedTest
     @CsvSource(
             value= {
+                    "'set min correct station',30,30",
+                    "'set middle correct station',25,25",
+                    "'set max correct station',9,9",
+                    "'set station below minimum',10,10",
+                    "'set station is higher than maximum',15,15"
+            }
+    )
+
+    public void setMaxStationManual(String message, int setMaxStation, int expected) {
+        Radio radio = new Radio();
+        radio.setMaxNumberStation(setMaxStation);
+
+        assertEquals(expected, radio.getMaxNumberStation(), message);
+    }
+
+    @ParameterizedTest
+    @CsvSource(
+            value= {
                     "'set min volume',0,1",
                     "'set middle volume',5,6",
-                    "'set max volume',10,10",
+                    "'set max volume',100,100",
                     "'set volume below minimum',-3,1",
-                    "'set volume is higher than maximum',20,10"
+                    "'set volume is higher than maximum',110,100"
             }
     )
 
@@ -82,10 +100,10 @@ class RadioTest {
     @CsvSource(
             value= {
                     "'set min volume',0,0",
-                    "'set middle volume',5,4",
-                    "'set max volume',10,9",
+                    "'set middle volume',50,49",
+                    "'set max volume',100,99",
                     "'set volume below minimum',-3,0",
-                    "'set volume is higher than maximum',20,9"
+                    "'set volume is higher than maximum',200,99"
             }
     )
 
