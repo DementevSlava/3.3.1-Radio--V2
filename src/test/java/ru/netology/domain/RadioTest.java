@@ -63,11 +63,11 @@ class RadioTest {
     @ParameterizedTest
     @CsvSource(
             value= {
-                    "'set min correct station',30,30",
-                    "'set middle correct station',25,25",
-                    "'set max correct station',9,9",
-                    "'set station below minimum',10,10",
-                    "'set station is higher than maximum',15,15"
+                    "'set max station 1',30,30",
+                    "'set max station 2',25,25",
+                    "'set max station 3',9,9",
+                    "'set max station 4',10,10",
+                    "'set max station 5',15,15"
             }
     )
 
