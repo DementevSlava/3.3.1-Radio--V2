@@ -17,7 +17,6 @@ class RadioTest {
                     "'set station below minimum',-3,1"
             }
     )
-
     public void nextNumberStation(String message, int setRadioStation, int expected) {
         Radio radio = new Radio();
         radio.setNumberStation(setRadioStation);
@@ -35,7 +34,6 @@ class RadioTest {
                     "'set max station',9,8"
             }
     )
-
     public void prevNumberStation(String message, int setRadioStation, int expected) {
         Radio radio = new Radio();
         radio.setNumberStation(setRadioStation);
@@ -53,7 +51,6 @@ class RadioTest {
                     "'set station is higher than maximum',15,9"
             }
     )
-
     public void setNumberStationManual(String message, int setRadioStation, int expected) {
         Radio radio = new Radio();
         radio.setNumberStation(setRadioStation);
@@ -70,11 +67,8 @@ class RadioTest {
                     "'set max station 5',15,15"
             }
     )
-
     public void setMaxStationManual(String message, int setMaxStation, int expected) {
-        Radio radio = new Radio();
-        radio.setMaxNumberStation(setMaxStation);
-
+        Radio radio = new Radio(setMaxStation);
         assertEquals(expected, radio.getMaxNumberStation(), message);
     }
 
@@ -88,7 +82,6 @@ class RadioTest {
                     "'set volume is higher than maximum',110,100"
             }
     )
-
     public void upVolume(String message, int volume, int expected) {
         Radio radio = new Radio();
         radio.setVolume(volume);
@@ -106,7 +99,6 @@ class RadioTest {
                     "'set volume is higher than maximum',200,99"
             }
     )
-
     public void downVolume(String message, int volume, int expected) {
         Radio radio = new Radio();
         radio.setVolume(volume);

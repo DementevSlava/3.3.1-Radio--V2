@@ -8,6 +8,14 @@ public class Radio {
     private int maxVolume = 100;
     private int minVolume = 0;
 
+    public Radio() {
+        this.maxNumberStation = getMaxNumberStation();
+    }
+
+    public Radio(int maxNumberStation) {
+        this.maxNumberStation = maxNumberStation;
+    }
+
     public void increaseNumberStation() {
         if (numberStation < maxNumberStation) {
             this.numberStation++;
@@ -75,9 +83,4 @@ public class Radio {
     public int getMaxNumberStation() {
         return maxNumberStation;
     }
-
-    public void setMaxNumberStation(int maxNumberStation) {
-        this.maxNumberStation = maxNumberStation;
-    }
 }
-
