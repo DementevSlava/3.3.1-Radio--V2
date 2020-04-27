@@ -1,12 +1,20 @@
-package ru.netology;
+package ru.netology.domain;
 
 public class Radio {
     private int numberStation;
     private int maxNumberStation = 9;
     private int minNumberStation = 0;
     private int volume;
-    private int maxVolume = 10;
+    private int maxVolume = 100;
     private int minVolume = 0;
+
+    public Radio() {
+        this.maxNumberStation = getMaxNumberStation();
+    }
+
+    public Radio(int maxNumberStation) {
+        this.maxNumberStation = maxNumberStation;
+    }
 
     public void increaseNumberStation() {
         if (numberStation < maxNumberStation) {
@@ -72,5 +80,7 @@ public class Radio {
         this.volume = volume;
     }
 
+    public int getMaxNumberStation() {
+        return maxNumberStation;
+    }
 }
-
